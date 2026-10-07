@@ -1,0 +1,89 @@
+{
+  "split": "dev",
+  "prompt_version": "v2",
+  "model": "llama3.2:3b",
+  "total_cases": 2,
+  "correct_count": 2,
+  "accuracy": 100.0,
+  "false_verified_count": 0,
+  "calibration": {
+    "avg_confidence_correct": 0.95,
+    "avg_confidence_incorrect": 0.0,
+    "confidence_gap": 0.95
+  },
+  "confusion_matrix": {
+    "verified": {
+      "verified": 2,
+      "rejected": 0,
+      "uncertain": 0
+    },
+    "rejected": {
+      "verified": 0,
+      "rejected": 0,
+      "uncertain": 0
+    },
+    "uncertain": {
+      "verified": 0,
+      "rejected": 0,
+      "uncertain": 0
+    }
+  },
+  "metrics": {
+    "verified": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2
+    },
+    "rejected": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    },
+    "uncertain": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    }
+  },
+  "phenomenon_stats": {
+    "exact_support": {
+      "correct": 1,
+      "total": 1,
+      "acc": 100.0
+    },
+    "semantic_paraphrase": {
+      "correct": 1,
+      "total": 1,
+      "acc": 100.0
+    }
+  },
+  "results": [
+    {
+      "id": "dev_01",
+      "phenomenon": "exact_support",
+      "domain": "genomics",
+      "claim": "Cas9 requires an adjacent PAM sequence for target binding.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The provided quote states 'Cas9 requires recognition of a PAM sequence adjacent to the target site for target binding.' which logically entails the claim 'Cas9 requires an adjacent PAM sequence for target binding.'",
+      "elapsed": 34.31
+    },
+    {
+      "id": "dev_02",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "genomics",
+      "claim": "The seed region of the guide RNA is critical for Cas9 cleavage fidelity.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quote 'Mismatches within the guide RNA seed region drastically impair the cleavage fidelity of the Cas9 enzyme.' logically entails the claim 'The seed region of the guide RNA is critical for Cas9 cleavage fidelity.'",
+      "elapsed": 22.06
+    }
+  ]
+}
