@@ -1,0 +1,32 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases & data
+data/*.db
+data/*.sqlite
+data/vectordb/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

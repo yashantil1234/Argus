@@ -1,0 +1,8 @@
+Python
+FastAPI
+PostgreSQL
+pgvector
+LLM API
+Pydantic
+LangGraph
+Git/GitHub 

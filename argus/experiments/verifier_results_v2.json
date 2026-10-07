@@ -1,0 +1,223 @@
+{
+  "prompt_version": "v2",
+  "model": "llama3.2:3b",
+  "total_cases": 16,
+  "correct_count": 7,
+  "accuracy": 43.75,
+  "false_verified_count": 5,
+  "confusion_matrix": {
+    "verified": {
+      "verified": 4,
+      "rejected": 0,
+      "uncertain": 0
+    },
+    "rejected": {
+      "verified": 0,
+      "rejected": 0,
+      "uncertain": 4
+    },
+    "uncertain": {
+      "verified": 5,
+      "rejected": 0,
+      "uncertain": 3
+    }
+  },
+  "metrics": {
+    "verified": {
+      "precision": 0.4444,
+      "recall": 1.0,
+      "f1": 0.6154,
+      "support": 4
+    },
+    "rejected": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "uncertain": {
+      "precision": 0.4286,
+      "recall": 0.375,
+      "f1": 0.4,
+      "support": 8
+    }
+  },
+  "results": [
+    {
+      "id": 1,
+      "category": "Direct Support",
+      "claim": "Cas9 requires an adjacent PAM sequence for target binding.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quote 'Cas9 requires recognition of a PAM sequence adjacent to the target site for target binding.' logically entails the claim 'Cas9 requires an adjacent PAM sequence for target binding.' through synonymy and paraphrase.",
+      "elapsed": 24.69
+    },
+    {
+      "id": 2,
+      "category": "Direct Support",
+      "claim": "The seed region of the guide RNA is critical for Cas9 cleavage fidelity.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quote 'Mismatches within the guide RNA seed region drastically impair the cleavage fidelity of the Cas9 enzyme.' logically entails and substantiates the claim 'The seed region of the guide RNA is critical for Cas9 cleavage fidelity.'",
+      "elapsed": 21.2
+    },
+    {
+      "id": 3,
+      "category": "Direct Support",
+      "claim": "SpCas9 specifically targets canonical NGG motifs in double-stranded DNA.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "Quote [2] states 'canonical target recognition specifically requires an NGG motif in double-stranded DNA', which logically entails 'specifically targets NGG motifs in double-stranded DNA'.",
+      "elapsed": 24.36
+    },
+    {
+      "id": 4,
+      "category": "Direct Support",
+      "claim": "High-fidelity Cas9 variants reduce off-target cleavage while preserving on-target efficacy.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "Quotes 1 and 2 convey the same meaning as the claim, using synonyms and logical entailment. 'Substantially lower' and 'reduce' imply a decrease in off-target cleavage, and 'maintain comparable' implies no loss of on-target efficacy.",
+      "elapsed": 23.41
+    },
+    {
+      "id": 5,
+      "category": "Contradiction",
+      "claim": "Calcium ions significantly enhance Cas9 cleavage activity.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.5,
+      "is_correct": false,
+      "reasoning": "Quote states calcium ions inhibit Cas9 cleavage activity, which contradicts the claim that calcium ions enhance Cas9 cleavage activity.",
+      "elapsed": 17.46
+    },
+    {
+      "id": 6,
+      "category": "Contradiction",
+      "claim": "The engineered variant retained over 90% of wild-type kinetic efficiency.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.5,
+      "is_correct": false,
+      "reasoning": "The quote states the engineered variant retained less than 15% of wild-type catalytic efficiency, which contradicts the claim of retaining over 90% of wild-type kinetic efficiency.",
+      "elapsed": 19.06
+    },
+    {
+      "id": 7,
+      "category": "Contradiction",
+      "claim": "Cas9 never cleaves DNA sequences containing seed-region mismatches.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.55,
+      "is_correct": false,
+      "reasoning": "Quote does not directly support or refute the claim, and the scope of the evidence (genome-wide profiling) is not explicitly matched to the claim (Cas9 never cleaves DNA sequences containing seed-region mismatches).",
+      "elapsed": 21.33
+    },
+    {
+      "id": 8,
+      "category": "Contradiction",
+      "claim": "The chemical modification permanently inactivates the Cas9 ribonucleoprotein complex.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.5,
+      "is_correct": false,
+      "reasoning": "The quote states that the chemical modification is cleaved upon exposure to visible light, fully restoring ribonucleoprotein activity within minutes. This suggests that the modification is not permanent, contradicting the claim that it permanently inactivates the Cas9 ribonucleoprotein complex.",
+      "elapsed": 41.39
+    },
+    {
+      "id": 9,
+      "category": "Scope Overreach",
+      "claim": "The gene therapy successfully reverses liver fibrosis in human clinical patients.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.5,
+      "is_correct": true,
+      "reasoning": "The provided quote does not specify the species or population being studied, which is a crucial aspect of the claim. The quote only mentions a murine model, which does not guarantee the results are applicable to human clinical patients.",
+      "elapsed": 40.05
+    },
+    {
+      "id": 10,
+      "category": "Causal Overreach",
+      "claim": "Elevated Cas9 expression directly causes increased chromosomal translocations.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.5,
+      "is_correct": true,
+      "reasoning": "The quote states a correlation between Cas9 expression and chromosomal translocations, but does not explicitly state causation. The claim requires a direct causal link, which is not supported by the provided evidence.",
+      "elapsed": 28.97
+    },
+    {
+      "id": 11,
+      "category": "Speculative Wording",
+      "claim": "The loop region determines the binding affinity for modified tracrRNA.",
+      "expected": "uncertain",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": false,
+      "reasoning": "The flexible loop region may participate in governing binding affinity for modified tracrRNA is a clear semantic entailment, where the phrase 'governing binding affinity' implies a direct relationship between the loop region and the binding affinity.",
+      "elapsed": 27.86
+    },
+    {
+      "id": 12,
+      "category": "Quantitative Overreach",
+      "claim": "The treatment increased cell viability by exactly 45 percent.",
+      "expected": "uncertain",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": false,
+      "reasoning": "The quotes indicate a statistically significant increase in cell viability, which logically entails the claim of a 45% increase.",
+      "elapsed": 26.63
+    },
+    {
+      "id": 13,
+      "category": "Partial Support",
+      "claim": "Cas9 requires ATP hydrolysis and operates optimally at physiological pH.",
+      "expected": "uncertain",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": false,
+      "reasoning": "The quote states Cas9 functions optimally at physiological pH 7.4, which logically entails the claim that Cas9 requires ATP hydrolysis and operates optimally at physiological pH.",
+      "elapsed": 28.97
+    },
+    {
+      "id": 14,
+      "category": "Irrelevant Evidence",
+      "claim": "Cas9 undergoes conformational change upon guide RNA loading.",
+      "expected": "uncertain",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": false,
+      "reasoning": "The quote 'Cas9 undergoes conformational change upon guide RNA loading.' directly states the claim, indicating a clear logical entailment.",
+      "elapsed": 18.22
+    },
+    {
+      "id": 15,
+      "category": "Outside Knowledge Trap",
+      "claim": "The human genome contains approximately 3 billion base pairs.",
+      "expected": "uncertain",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": false,
+      "reasoning": "The provided quote does not directly contradict or disprove the claim. The claim is supported by the fact that the quote mentions the human genome, which is a well-established scientific fact.",
+      "elapsed": 19.93
+    },
+    {
+      "id": 16,
+      "category": "Missing Evidence",
+      "claim": "CRISPR interference selectively silences gene transcription without cutting DNA.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 1.0,
+      "is_correct": true,
+      "reasoning": "No supporting evidence was provided for this claim.",
+      "elapsed": 0.0
+    }
+  ]
+}

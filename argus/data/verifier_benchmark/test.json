@@ -1,0 +1,401 @@
+[
+  {
+    "id": "test_01",
+    "label": "verified",
+    "phenomenon": "exact_support",
+    "domain": "genomics",
+    "claim_text": "Cas9 cleavage generates predominantly blunt-ended double-stranded breaks.",
+    "quotes": [
+      "Target DNA cleavage by wild-type Cas9 produces predominantly blunt double-stranded DNA ends 3 base pairs upstream of the PAM."
+    ]
+  },
+  {
+    "id": "dev_test_02",
+    "label": "verified",
+    "phenomenon": "semantic_paraphrase",
+    "domain": "genomics",
+    "claim_text": "Engineered deaminases modify target nucleotides without double-strand break intermediates.",
+    "quotes": [
+      "Base editing complexes catalyze direct deamination of target cytosines or adenines without double-stranded DNA cleavage."
+    ]
+  },
+  {
+    "id": "test_03",
+    "label": "verified",
+    "phenomenon": "joint_synthesis",
+    "domain": "pharmacology",
+    "claim_text": "Doxorubicin intercalates DNA and inhibits topoisomerase II to block tumor replication.",
+    "quotes": [
+      "Doxorubicin binds avidly to double-stranded DNA via planar anthracycline ring intercalation.",
+      "This interaction stabilizes the topoisomerase II cleavable complex, halting replication forks and precipitating lethal DNA breaks."
+    ]
+  },
+  {
+    "id": "test_04",
+    "label": "verified",
+    "phenomenon": "semantic_paraphrase",
+    "domain": "cell_biology",
+    "claim_text": "Caspase-3 acts as an executioner caspase in mammalian apoptosis.",
+    "quotes": [
+      "Cleavage of downstream cellular structural substrates by active caspase-3 constitutes the central execution phase of apoptosis."
+    ]
+  },
+  {
+    "id": "test_05",
+    "label": "verified",
+    "phenomenon": "exact_support",
+    "domain": "biomedicine",
+    "claim_text": "HER2 amplification drives aggressive oncogenic growth in a subset of breast cancers.",
+    "quotes": [
+      "Amplification of the ERBB2 gene, encoding HER2, occurs in approximately 20% of breast tumors, driving aggressive neoplastic proliferation."
+    ]
+  },
+  {
+    "id": "test_06",
+    "label": "verified",
+    "phenomenon": "exact_support",
+    "domain": "ai_ml",
+    "claim_text": "Batch normalization reduces internal covariate shift during deep neural network training.",
+    "quotes": [
+      "By standardizing layer inputs across mini-batch examples, batch normalization dramatically accelerates training and mitigates internal covariate shift."
+    ]
+  },
+  {
+    "id": "test_07",
+    "label": "verified",
+    "phenomenon": "semantic_paraphrase",
+    "domain": "pharmacology",
+    "claim_text": "Methotrexate inhibits dihydrofolate reductase to deplete thymidine pools.",
+    "quotes": [
+      "Methotrexate acts as a competitive antagonist of dihydrofolate reductase (DHFR), shutting down de novo synthesis of thymidylate and purines."
+    ]
+  },
+  {
+    "id": "test_08",
+    "label": "verified",
+    "phenomenon": "joint_synthesis",
+    "domain": "cell_biology",
+    "claim_text": "Microtubule dynamic instability is powered by GTP hydrolysis on beta-tubulin subunits.",
+    "quotes": [
+      "Tubulin heterodimers polymerize into protofilaments in a GTP-bound conformation.",
+      "Hydrolysis of GTP bound to beta-tubulin weakens the lattice structure, inducing catastrophe and rapid microtubule depolymerization."
+    ]
+  },
+  {
+    "id": "test_09",
+    "label": "verified",
+    "phenomenon": "exact_support",
+    "domain": "genomics",
+    "claim_text": "Okazaki fragments are synthesized discontinuously on the lagging strand during DNA replication.",
+    "quotes": [
+      "Because polymerases synthesize exclusively 5' to 3', lagging strand synthesis proceeds discontinuously via short Okazaki segments."
+    ]
+  },
+  {
+    "id": "test_10",
+    "label": "verified",
+    "phenomenon": "semantic_paraphrase",
+    "domain": "biomedicine",
+    "claim_text": "ACE inhibitors reduce blood pressure by suppressing angiotensin II synthesis.",
+    "quotes": [
+      "Angiotensin-converting enzyme inhibitors block the conversion of angiotensin I to the potent vasoconstrictor angiotensin II, lowering systemic vascular resistance."
+    ]
+  },
+  {
+    "id": "test_11",
+    "label": "verified",
+    "phenomenon": "exact_support",
+    "domain": "ai_ml",
+    "claim_text": "Backpropagation computes analytical gradients using the chain rule of calculus.",
+    "quotes": [
+      "The backpropagation algorithm systematically applies the chain rule to compute partial derivatives of loss with respect to all network weights."
+    ]
+  },
+  {
+    "id": "test_12",
+    "label": "verified",
+    "phenomenon": "exact_support",
+    "domain": "cell_biology",
+    "claim_text": "Gap junctions allow direct intercellular passage of small ions and signaling molecules.",
+    "quotes": [
+      "Connexon hexamers dock between adjacent cell membranes to form gap junction channels permeable to ions and metabolites under 1 kDa."
+    ]
+  },
+  {
+    "id": "test_13",
+    "label": "verified",
+    "phenomenon": "joint_synthesis",
+    "domain": "pharmacology",
+    "claim_text": "Naloxone displaces opioids from mu-opioid receptors to reverse respiratory depression.",
+    "quotes": [
+      "Naloxone is a pure competitive antagonist with high binding affinity for mu-opioid receptors.",
+      "Administration rapidly displaces bound opioid agonists, promptly restoring physiological respiratory drive during acute overdose."
+    ]
+  },
+  {
+    "id": "test_14",
+    "label": "verified",
+    "phenomenon": "semantic_paraphrase",
+    "domain": "genomics",
+    "claim_text": "CpG island methylation in tumor suppressor promoters silences expression in cancer cells.",
+    "quotes": [
+      "Aberrant de novo methylation of promoter CpG islands serves as an epigenetic mechanism that permanently represses tumor suppressor transcription in neoplasia."
+    ]
+  },
+  {
+    "id": "test_15",
+    "label": "rejected",
+    "phenomenon": "direct_functional_negation",
+    "domain": "genomics",
+    "claim_text": "Cas9 cleaves target DNA without any requirement for a guide RNA.",
+    "quotes": [
+      "Apo-Cas9 devoid of guide RNA is completely inert and lacks any measurable affinity or cleavage activity on double-stranded DNA."
+    ]
+  },
+  {
+    "id": "test_16",
+    "label": "rejected",
+    "phenomenon": "numerical_contradiction",
+    "domain": "pharmacology",
+    "claim_text": "The antibiotic eradicated bacterial colonies in less than 2 minutes.",
+    "quotes": [
+      "Time-kill kinetics demonstrated that bacterial eradication required a minimum of 24 to 48 hours of continuous exposure at 4x MIC."
+    ]
+  },
+  {
+    "id": "test_17",
+    "label": "rejected",
+    "phenomenon": "directional_negation",
+    "domain": "biomedicine",
+    "claim_text": "Epinephrine administration causes systemic vasodilation and severe hypotension.",
+    "quotes": [
+      "Through alpha-1 and beta-1 adrenergic stimulation, epinephrine increases cardiac output and systemic vascular resistance, elevating blood pressure."
+    ]
+  },
+  {
+    "id": "test_18",
+    "label": "rejected",
+    "phenomenon": "universal_contradiction",
+    "domain": "cell_biology",
+    "claim_text": "Prokaryotic cells contain a membrane-enclosed nucleus and endoplasmic reticulum.",
+    "quotes": [
+      "Prokaryotes lack membrane-delimited intracellular organelles; their genetic material resides in an unenclosed cytoplasmic nucleoid region."
+    ]
+  },
+  {
+    "id": "test_19",
+    "label": "rejected",
+    "phenomenon": "direct_functional_negation",
+    "domain": "ai_ml",
+    "claim_text": "ReLU activations produce smooth, continuously differentiable outputs with zero gradient saturation.",
+    "quotes": [
+      "The rectified linear unit f(x) = max(0, x) has a non-differentiable sharp corner at x = 0 and outputs a hard zero gradient for all negative inputs."
+    ]
+  },
+  {
+    "id": "test_20",
+    "label": "rejected",
+    "phenomenon": "numerical_contradiction",
+    "domain": "genomics",
+    "claim_text": "The human mitochondrial chromosome spans over 500 million base pairs.",
+    "quotes": [
+      "Human mitochondrial DNA is a compact circular molecule comprising exactly 16,569 base pairs."
+    ]
+  },
+  {
+    "id": "test_21",
+    "label": "rejected",
+    "phenomenon": "direct_functional_negation",
+    "domain": "pharmacology",
+    "claim_text": "Heparin directly breaks down pre-existing fibrin mesh clots.",
+    "quotes": [
+      "Heparin acts as an anticoagulant that accelerates antithrombin inhibition; it has no direct intrinsic fibrinolytic or clot-dissolving activity."
+    ]
+  },
+  {
+    "id": "test_22",
+    "label": "rejected",
+    "phenomenon": "directional_negation",
+    "domain": "biomedicine",
+    "claim_text": "Thyroid hormone deficiency results in marked tachycardia and hyperthermia.",
+    "quotes": [
+      "Hypothyroidism leads to a hypometabolic state characteristically manifested by sinus bradycardia, cold intolerance, and hypothermia."
+    ]
+  },
+  {
+    "id": "test_23",
+    "label": "rejected",
+    "phenomenon": "direct_functional_negation",
+    "domain": "cell_biology",
+    "claim_text": "Ribosomes synthesize polysaccharides through glycosidic bond formation.",
+    "quotes": [
+      "Ribosomes are macromolecular ribozyme machines dedicated exclusively to translating mRNA into polypeptide chains via peptide bond synthesis."
+    ]
+  },
+  {
+    "id": "test_24",
+    "label": "rejected",
+    "phenomenon": "numerical_contradiction",
+    "domain": "ai_ml",
+    "claim_text": "The transformer training run was finished in 30 seconds on a single CPU core.",
+    "quotes": [
+      "Pre-training the baseline transformer required 14 days of continuous computation on an interconnected cluster of 256 A100 GPUs."
+    ]
+  },
+  {
+    "id": "test_25",
+    "label": "rejected",
+    "phenomenon": "directional_negation",
+    "domain": "genomics",
+    "claim_text": "Nonsense mutations convert a stop codon into a sense amino acid codon.",
+    "quotes": [
+      "A nonsense mutation introduces a premature termination stop codon into the coding sequence, resulting in truncated polypeptide products."
+    ]
+  },
+  {
+    "id": "test_26",
+    "label": "rejected",
+    "phenomenon": "universal_contradiction",
+    "domain": "biomedicine",
+    "claim_text": "Type 1 diabetes is primarily caused by excessive insulin hypersecretion.",
+    "quotes": [
+      "Type 1 diabetes results from autoimmune destruction of pancreatic beta cells, causing profound and absolute insulin deficiency."
+    ]
+  },
+  {
+    "id": "test_27",
+    "label": "rejected",
+    "phenomenon": "direct_functional_negation",
+    "domain": "pharmacology",
+    "claim_text": "Aminoglycoside antibiotics kill bacteria by inhibiting cell wall peptidoglycan synthesis.",
+    "quotes": [
+      "Aminoglycosides exert bactericidal action by irreversibly binding the bacterial 30S ribosomal subunit to cause mistranslation and inhibit protein synthesis."
+    ]
+  },
+  {
+    "id": "test_28",
+    "label": "uncertain",
+    "phenomenon": "scope_overreach",
+    "domain": "biomedicine",
+    "claim_text": "The therapeutic monoclonal antibody prevents stroke in human hypertensive patients.",
+    "quotes": [
+      "In spontaneously hypertensive stroke-prone rat strains, prophylactic antibody treatment significantly reduced cerebral infarct size."
+    ]
+  },
+  {
+    "id": "test_29",
+    "label": "uncertain",
+    "phenomenon": "causal_overreach",
+    "domain": "cell_biology",
+    "claim_text": "Telomere attrition directly causes neurodegenerative dementia.",
+    "quotes": [
+      "Shorter leukocyte telomere length was observed with higher frequency among elderly subjects diagnosed with progressive dementia."
+    ]
+  },
+  {
+    "id": "test_30",
+    "label": "uncertain",
+    "phenomenon": "speculative_hedging",
+    "domain": "genomics",
+    "claim_text": "CRISPR off-target cleavage at non-canonical PAM sites causes oncogenic transformation.",
+    "quotes": [
+      "We hypothesize that non-canonical PAM cleavage events could conceivably trigger genomic instability under select selective pressures."
+    ]
+  },
+  {
+    "id": "test_31",
+    "label": "uncertain",
+    "phenomenon": "quantitative_overreach",
+    "domain": "pharmacology",
+    "claim_text": "The new drug formulation increases bioavailability by exactly 3.5-fold.",
+    "quotes": [
+      "Pharmacokinetic curves demonstrated a statistically significant enhancement in systemic drug bioavailability over the standard pill."
+    ]
+  },
+  {
+    "id": "test_32",
+    "label": "uncertain",
+    "phenomenon": "partial_support",
+    "domain": "genomics",
+    "claim_text": "The endonuclease cuts both strands cleanly and leaves four-base 3' single-stranded overhangs.",
+    "quotes": [
+      "Restriction digestion experiments confirmed that the enzyme cleaves both strands of double-stranded substrates cleanly."
+    ]
+  },
+  {
+    "id": "test_33",
+    "label": "uncertain",
+    "phenomenon": "irrelevant_evidence",
+    "domain": "genomics",
+    "claim_text": "Cas9 recognizes target sites using an RNA-DNA heteroduplex loop.",
+    "quotes": [
+      "Superconducting quantum interference devices measure extremely subtle magnetic flux variations in cryogenic environments."
+    ]
+  },
+  {
+    "id": "test_34",
+    "label": "uncertain",
+    "phenomenon": "outside_knowledge_trap",
+    "domain": "genomics",
+    "claim_text": "The structure of DNA is an antiparallel double helix.",
+    "quotes": [
+      "Bacteriophage T4 encodes its own DNA topoisomerase containing three essential gene products."
+    ]
+  },
+  {
+    "id": "test_35",
+    "label": "uncertain",
+    "phenomenon": "missing_evidence",
+    "domain": "pharmacology",
+    "claim_text": "Monoclonal antibody conjugated with cytotoxic payload selectively targets tumor vasculature.",
+    "quotes": []
+  },
+  {
+    "id": "test_36",
+    "label": "uncertain",
+    "phenomenon": "scope_overreach",
+    "domain": "pharmacology",
+    "claim_text": "The antiviral candidate completely cures hepatitis C in human liver transplant recipients.",
+    "quotes": [
+      "In cell-free replicon assays, the novel polymerase inhibitor suppressed HCV RNA replication with an EC50 of 12 nM."
+    ]
+  },
+  {
+    "id": "test_37",
+    "label": "uncertain",
+    "phenomenon": "causal_overreach",
+    "domain": "biomedicine",
+    "claim_text": "Chronic systemic inflammation directly triggers clinical major depressive disorder.",
+    "quotes": [
+      "Patients with major depressive disorder consistently exhibit elevated baseline circulating serum levels of inflammatory markers like IL-6 and CRP."
+    ]
+  },
+  {
+    "id": "test_38",
+    "label": "uncertain",
+    "phenomenon": "speculative_hedging",
+    "domain": "ai_ml",
+    "claim_text": "Emergent abilities in large models arise from discrete phase transitions in optimization landscapes.",
+    "quotes": [
+      "It is possible that the sudden emergence of certain reasoning capabilities might be explained by non-linear metric effects rather than genuine phase transitions."
+    ]
+  },
+  {
+    "id": "test_39",
+    "label": "uncertain",
+    "phenomenon": "quantitative_overreach",
+    "domain": "ai_ml",
+    "claim_text": "Flash attention decreases memory footprint by exactly 80 percent on all GPU architectures.",
+    "quotes": [
+      "By computing attention in tiles without materializing the full intermediate matrix, the algorithm significantly reduces GPU HBM memory requirements."
+    ]
+  },
+  {
+    "id": "test_40",
+    "label": "uncertain",
+    "phenomenon": "missing_evidence",
+    "domain": "cell_biology",
+    "claim_text": "Nuclear pore complexes regulate bidirectional nucleocytoplasmic transport using disordered FG-repeat domains.",
+    "quotes": []
+  }
+]
