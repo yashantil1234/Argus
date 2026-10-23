@@ -1,6 +1,10 @@
 """Unit tests for the ARGUS LLM abstraction layer.
 
 All tests are fully mocked — no real network calls, no running Ollama or OpenRouter.
+
+Note: Since the refactor, OllamaClient raises _TransientError (a RuntimeError subclass)
+instead of the plain ConnectionError it raised before.  The connection-error test has
+been updated to accept either type so the original intent is preserved.
 """
 
 import sys
@@ -15,9 +19,13 @@ import pytest
 
 from app.core.llm import (
     BaseLLMClient,
+    GeminiClient,
+    GrokClient,
+    LLMError,
     LLMProvider,
     OllamaClient,
     OpenRouterClient,
+    _TransientError,
     ask_llm,
     get_llm_client,
 )

@@ -1,0 +1,1100 @@
+{
+  "split": "dev",
+  "prompt_version": "v1",
+  "model": "llama3.2:3b",
+  "total_cases": 80,
+  "correct_count": 34,
+  "accuracy": 42.5,
+  "false_verified_count": 0,
+  "calibration": {
+    "avg_confidence_correct": 0.5426,
+    "avg_confidence_incorrect": 0.4326,
+    "confidence_gap": 0.11
+  },
+  "confusion_matrix": {
+    "verified": {
+      "verified": 3,
+      "rejected": 0,
+      "uncertain": 24
+    },
+    "rejected": {
+      "verified": 0,
+      "rejected": 5,
+      "uncertain": 22
+    },
+    "uncertain": {
+      "verified": 0,
+      "rejected": 0,
+      "uncertain": 26
+    }
+  },
+  "metrics": {
+    "verified": {
+      "precision": 1.0,
+      "recall": 0.1111,
+      "f1": 0.2,
+      "support": 27
+    },
+    "rejected": {
+      "precision": 1.0,
+      "recall": 0.1852,
+      "f1": 0.3125,
+      "support": 27
+    },
+    "uncertain": {
+      "precision": 0.3611,
+      "recall": 1.0,
+      "f1": 0.5306,
+      "support": 26
+    }
+  },
+  "phenomenon_stats": {
+    "causal_overreach": {
+      "correct": 4,
+      "total": 4,
+      "acc": 100.0
+    },
+    "direct_functional_negation": {
+      "correct": 2,
+      "total": 11,
+      "acc": 18.2
+    },
+    "directional_negation": {
+      "correct": 1,
+      "total": 5,
+      "acc": 20.0
+    },
+    "exact_support": {
+      "correct": 2,
+      "total": 12,
+      "acc": 16.7
+    },
+    "irrelevant_evidence": {
+      "correct": 3,
+      "total": 3,
+      "acc": 100.0
+    },
+    "joint_synthesis": {
+      "correct": 1,
+      "total": 5,
+      "acc": 20.0
+    },
+    "missing_evidence": {
+      "correct": 3,
+      "total": 3,
+      "acc": 100.0
+    },
+    "multi_premise_support": {
+      "correct": 0,
+      "total": 1,
+      "acc": 0.0
+    },
+    "numerical_contradiction": {
+      "correct": 2,
+      "total": 7,
+      "acc": 28.6
+    },
+    "outside_knowledge_trap": {
+      "correct": 3,
+      "total": 3,
+      "acc": 100.0
+    },
+    "partial_support": {
+      "correct": 3,
+      "total": 3,
+      "acc": 100.0
+    },
+    "quantitative_overreach": {
+      "correct": 3,
+      "total": 3,
+      "acc": 100.0
+    },
+    "reversibility_contradiction": {
+      "correct": 0,
+      "total": 1,
+      "acc": 0.0
+    },
+    "scope_overreach": {
+      "correct": 4,
+      "total": 4,
+      "acc": 100.0
+    },
+    "semantic_paraphrase": {
+      "correct": 0,
+      "total": 9,
+      "acc": 0.0
+    },
+    "speculative_hedging": {
+      "correct": 3,
+      "total": 3,
+      "acc": 100.0
+    },
+    "universal_contradiction": {
+      "correct": 0,
+      "total": 3,
+      "acc": 0.0
+    }
+  },
+  "results": [
+    {
+      "id": "dev_01",
+      "phenomenon": "exact_support",
+      "domain": "genomics",
+      "claim": "Cas9 requires an adjacent PAM sequence for target binding.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote mentions 'adjacent' PAM sequence but does not explicitly state 'requires'.",
+      "elapsed": 18.26
+    },
+    {
+      "id": "dev_02",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "genomics",
+      "claim": "The seed region of the guide RNA is critical for Cas9 cleavage fidelity.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention 'mismatches' within the seed region, but do not explicitly state 'drastically impair' or 'impair' the cleavage fidelity of the Cas9 enzyme.",
+      "elapsed": 12.9
+    },
+    {
+      "id": "dev_03",
+      "phenomenon": "multi_premise_support",
+      "domain": "genomics",
+      "claim": "SpCas9 specifically targets canonical NGG motifs in double-stranded DNA.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "Quote [2] mentions 'canonical target recognition specifically requires an NGG motif in double-stranded DNA', but does not explicitly state that SpCas9 targets only canonical NGG motifs.",
+      "elapsed": 12.54
+    },
+    {
+      "id": "dev_04",
+      "phenomenon": "joint_synthesis",
+      "domain": "genomics",
+      "claim": "High-fidelity Cas9 variants reduce off-target cleavage while preserving on-target efficacy.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.55,
+      "is_correct": false,
+      "reasoning": "Quote [1] mentions 'substantially lower off-target cleavage genome-wide', but does not directly compare efficacy. Quote [2] states 'maintain comparable on-target cleavage efficacy', but does not address off-target cleavage.",
+      "elapsed": 12.75
+    },
+    {
+      "id": "dev_05",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "biomedicine",
+      "claim": "Metformin lowers hepatic glucose production in type 2 diabetes.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote mentions 'suppression and reduction of hepatic gluconeogenesis', but does not explicitly state 'hepatic glucose production'.",
+      "elapsed": 103.98
+    },
+    {
+      "id": "dev_06",
+      "phenomenon": "exact_support",
+      "domain": "biomedicine",
+      "claim": "Pembrolizumab is a humanized monoclonal antibody targeting programmed cell death protein 1.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote mentions Pembrolizumab is an engineered humanized IgG4 monoclonal antibody, but does not explicitly state it targets programmed cell death protein 1.",
+      "elapsed": 20.14
+    },
+    {
+      "id": "dev_07",
+      "phenomenon": "joint_synthesis",
+      "domain": "pharmacology",
+      "claim": "Statins inhibit HMG-CoA reductase and decrease circulating LDL cholesterol levels.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "Quote [1] explicitly states that statins inhibit HMG-CoA reductase, and quote [2] states that this inhibition leads to a reduction in circulating LDL cholesterol levels.",
+      "elapsed": 17.14
+    },
+    {
+      "id": "dev_08",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "cell_biology",
+      "claim": "Telomerase elongation counteracts cellular senescence caused by end-replication shortening.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes describe a mechanism (telomerase synthesizing repetitive telomeric DNA) but do not explicitly state that it counteracts cellular senescence caused by end-replication shortening.",
+      "elapsed": 20.27
+    },
+    {
+      "id": "dev_09",
+      "phenomenon": "exact_support",
+      "domain": "genomics",
+      "claim": "Base editors introduce targeted point mutations without creating double-strand DNA breaks.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote does not explicitly state that base editors do not create double-strand DNA breaks, only that they do not generate double-stranded DNA breaks in the context of C-G to T-A base pair conversion.",
+      "elapsed": 17.74
+    },
+    {
+      "id": "dev_10",
+      "phenomenon": "exact_support",
+      "domain": "cell_biology",
+      "claim": "Ubiquitin-tagged proteins are degraded by the 26S proteasome.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quotes directly state that proteins covalently modified with polyubiquitin chains are recognized and subsequently degraded by the 26S proteasome complex, which explicitly supports the claim.",
+      "elapsed": 14.44
+    },
+    {
+      "id": "dev_11",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "pharmacology",
+      "claim": "Aspirin irreversibly inhibits cyclooxygenase-1 via covalent acetylation.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention 'covalent acetylation' and 'permanent enzymatic inactivation', but do not explicitly state 'irreversibly inhibits cyclooxygenase-1'.",
+      "elapsed": 16.45
+    },
+    {
+      "id": "dev_12",
+      "phenomenon": "joint_synthesis",
+      "domain": "genomics",
+      "claim": "Prime editing combines a reverse transcriptase with a nicking Cas9 to copy genetic edits into the genome.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "Quote [1] mentions an engineered reverse transcriptase fused to a Cas9 nickase, but does not explicitly state the claim about copying genetic edits into the genome. Quote [2] only mentions template reverse transcription, not the combination of reverse transcriptase and Cas9 nickase.",
+      "elapsed": 20.37
+    },
+    {
+      "id": "dev_13",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "ai_ml",
+      "claim": "Self-attention computes dynamic weights based on pairwise token representations.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention 'soft alignment scores' and 'scaled dot-product operations', but do not explicitly state 'dynamic weights' or 'pairwise token representations'.",
+      "elapsed": 15.5
+    },
+    {
+      "id": "dev_14",
+      "phenomenon": "exact_support",
+      "domain": "ai_ml",
+      "claim": "Dropout randomly sets a fraction of activations to zero during neural network training.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote mentions 'zeroes out' but does not explicitly state 'a fraction of activations' or 'during neural network training'.",
+      "elapsed": 15.3
+    },
+    {
+      "id": "dev_15",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "cell_biology",
+      "claim": "Mitochondria produce ATP primarily through oxidative phosphorylation across the inner membrane.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention the electrochemical proton gradient and ATP synthase, but do not explicitly state that mitochondria produce ATP primarily through oxidative phosphorylation across the inner membrane.",
+      "elapsed": 17.82
+    },
+    {
+      "id": "dev_16",
+      "phenomenon": "exact_support",
+      "domain": "biomedicine",
+      "claim": "Insulin signaling stimulates GLUT4 translocation to the plasma membrane in skeletal muscle.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention 'mobilizes intracellular GLUT4 glucose transporters' but do not explicitly state 'stimulates GLUT4 translocation to the plasma membrane in skeletal muscle'.",
+      "elapsed": 14.77
+    },
+    {
+      "id": "dev_17",
+      "phenomenon": "joint_synthesis",
+      "domain": "pharmacology",
+      "claim": "Checkpoint inhibitors disinhibit cytotoxic T cells to mount an antitumor immune response.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "Quote [1] mentions 'removes key inhibitory brakes' but does not explicitly state 'disinhibit cytotoxic T cells'. Quote [2] talks about 'reactivation' of lymphocytes but does not directly mention 'disinhibit'.",
+      "elapsed": 18.04
+    },
+    {
+      "id": "dev_18",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "genomics",
+      "claim": "DNA methylation at CpG islands typically suppresses downstream gene transcription.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention 'stable gene silencing' but do not directly state that DNA methylation at CpG islands suppresses downstream gene transcription. The phrase 'suppresses downstream gene transcription' is not present in the provided quotes.",
+      "elapsed": 15.14
+    },
+    {
+      "id": "dev_19",
+      "phenomenon": "exact_support",
+      "domain": "biomedicine",
+      "claim": "C-reactive protein is an acute-phase reactant synthesized by hepatocytes in response to IL-6.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.55,
+      "is_correct": false,
+      "reasoning": "The quotes describe CRP as an acute-phase protein, but do not explicitly state it is synthesized by hepatocytes in response to IL-6. The word 'stimulation' is used instead, which is not sufficient to confirm the claim.",
+      "elapsed": 17.24
+    },
+    {
+      "id": "dev_20",
+      "phenomenon": "exact_support",
+      "domain": "cell_biology",
+      "claim": "p53 acts as a transcription factor regulating genes involved in cell cycle arrest and apoptosis.",
+      "expected": "verified",
+      "predicted": "verified",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quotes explicitly state that p53 functions as a sequence-specific transcription factor that activates expression of downstream effectors mediating cell cycle arrest and apoptotic death.",
+      "elapsed": 17.58
+    },
+    {
+      "id": "dev_21",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "genomics",
+      "claim": "Histone acetylation neutralizes lysine positive charges, promoting an open chromatin structure.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes describe the effect of histone acetylation on lysine positive charges, but do not explicitly state that this neutralization promotes an open chromatin structure.",
+      "elapsed": 16.57
+    },
+    {
+      "id": "dev_22",
+      "phenomenon": "exact_support",
+      "domain": "ai_ml",
+      "claim": "Layer normalization standardizes inputs across feature dimensions within each training example.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote does not explicitly state that layer normalization standardizes inputs across feature dimensions within each training example. It only mentions that it computes the mean and variance across all features for a single sample independently, which is not directly related to the claim.",
+      "elapsed": 17.25
+    },
+    {
+      "id": "dev_23",
+      "phenomenon": "joint_synthesis",
+      "domain": "biomedicine",
+      "claim": "CAR-T cells express synthetic receptors targeting tumor surface antigens to induce cytolysis.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "Quote [1] describes the structure of CARs, but does not mention tumor surface antigens. Quote [2] mentions tumor surface antigens, but does not describe the expression of synthetic receptors.",
+      "elapsed": 17.79
+    },
+    {
+      "id": "dev_24",
+      "phenomenon": "exact_support",
+      "domain": "pharmacology",
+      "claim": "Warfarin acts as a vitamin K antagonist, inhibiting the synthesis of functional clotting factors.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote mentions the inhibition of gamma-carboxylation and maturation of clotting factors II, VII, IX, and X, but does not explicitly state that Warfarin acts as a vitamin K antagonist.",
+      "elapsed": 16.16
+    },
+    {
+      "id": "dev_25",
+      "phenomenon": "semantic_paraphrase",
+      "domain": "genomics",
+      "claim": "Alternative splicing enables a single pre-mRNA to yield distinct protein isoforms.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes describe a process (differential exon inclusion) but do not explicitly state that it enables a single pre-mRNA to yield distinct protein isoforms.",
+      "elapsed": 15.4
+    },
+    {
+      "id": "dev_26",
+      "phenomenon": "exact_support",
+      "domain": "cell_biology",
+      "claim": "Autophagy packages cytoplasmic components into double-membrane autophagosomes for lysosomal digestion.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention 'sequesters damaged organelles' and 'fuses with lysosomes', but do not explicitly state 'packages cytoplasmic components into double-membrane autophagosomes for lysosomal digestion'.",
+      "elapsed": 15.76
+    },
+    {
+      "id": "dev_27",
+      "phenomenon": "exact_support",
+      "domain": "biomedicine",
+      "claim": "GLP-1 receptor agonists enhance glucose-dependent insulin secretion and delay gastric emptying.",
+      "expected": "verified",
+      "predicted": "uncertain",
+      "confidence": 0.55,
+      "is_correct": false,
+      "reasoning": "The quotes describe the effects of GLP-1 receptor agonists on glucose-stimulated insulin release and gastric transit, but do not explicitly state that these effects enhance glucose-dependent insulin secretion and delay gastric emptying.",
+      "elapsed": 15.81
+    },
+    {
+      "id": "dev_28",
+      "phenomenon": "direct_functional_negation",
+      "domain": "genomics",
+      "claim": "Calcium ions significantly enhance Cas9 cleavage activity.",
+      "expected": "rejected",
+      "predicted": "rejected",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quote states that calcium ions 'completely inhibit and block' Cas9 cleavage activity, directly contradicting the claim that calcium ions 'significantly enhance' Cas9 cleavage activity.",
+      "elapsed": 14.99
+    },
+    {
+      "id": "dev_29",
+      "phenomenon": "numerical_contradiction",
+      "domain": "genomics",
+      "claim": "The engineered variant retained over 90% of wild-type kinetic efficiency.",
+      "expected": "rejected",
+      "predicted": "rejected",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "Quote [1] directly contradicts the claim by stating the engineered mutant retained less than 15% of wild-type catalytic efficiency, which is the opposite of the claim.",
+      "elapsed": 15.34
+    },
+    {
+      "id": "dev_30",
+      "phenomenon": "universal_contradiction",
+      "domain": "genomics",
+      "claim": "Cas9 never cleaves DNA sequences containing seed-region mismatches.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote mentions 'certain non-target loci' despite seed-region mismatches, but does not explicitly state that Cas9 never cleaves DNA sequences with such mismatches.",
+      "elapsed": 15.64
+    },
+    {
+      "id": "dev_31",
+      "phenomenon": "reversibility_contradiction",
+      "domain": "genomics",
+      "claim": "The chemical modification permanently inactivates the Cas9 ribonucleoprotein complex.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes do not mention the permanent inactivation of the Cas9 ribonucleoprotein complex. Instead, they describe a reversible cleavage of the modification upon exposure to visible light.",
+      "elapsed": 14.75
+    },
+    {
+      "id": "dev_32",
+      "phenomenon": "directional_negation",
+      "domain": "biomedicine",
+      "claim": "Metformin therapy causes sharp increases in plasma fasting glucose.",
+      "expected": "rejected",
+      "predicted": "rejected",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quotes state a decrease in fasting blood glucose, which directly contradicts the claim of sharp increases.",
+      "elapsed": 14.17
+    },
+    {
+      "id": "dev_33",
+      "phenomenon": "numerical_contradiction",
+      "domain": "pharmacology",
+      "claim": "The patient group taking drug X showed a mortality rate of 85%.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.05,
+      "is_correct": false,
+      "reasoning": "The provided quote does not mention mortality rate, only 30-day mortality, and the claim mentions 85% mortality rate, which is not directly supported.",
+      "elapsed": 13.26
+    },
+    {
+      "id": "dev_34",
+      "phenomenon": "direct_functional_negation",
+      "domain": "cell_biology",
+      "claim": "Bcl-2 overexpression accelerates apoptotic cell death in response to radiation.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes describe Bcl-2 as an anti-apoptotic survival factor but do not explicitly state its effect on radiation-induced apoptosis.",
+      "elapsed": 13.06
+    },
+    {
+      "id": "dev_35",
+      "phenomenon": "direct_functional_negation",
+      "domain": "genomics",
+      "claim": "Cas12a nucleases require two independent tracrRNA and crRNA molecules for cleavage.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "Quote [1] does not mention tracrRNA, while the claim requires two independent tracrRNA and crRNA molecules for cleavage.",
+      "elapsed": 13.11
+    },
+    {
+      "id": "dev_36",
+      "phenomenon": "numerical_contradiction",
+      "domain": "ai_ml",
+      "claim": "The convolutional model achieved a top-1 accuracy below 30% on ImageNet.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote only reports the baseline accuracy of 78.4%, without mentioning the top-1 accuracy of the convolutional model. It does not provide sufficient information to prove or disprove the claim.",
+      "elapsed": 14.21
+    },
+    {
+      "id": "dev_37",
+      "phenomenon": "direct_functional_negation",
+      "domain": "cell_biology",
+      "claim": "Telomerase activity is abundant in most healthy adult human somatic cells.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes do not explicitly state that telomerase activity is abundant in most healthy adult human somatic cells. Instead, they mention that telomerase reverse transcriptase expression is transcriptionally silenced in most normal human adult somatic tissues, which does not directly support the claim.",
+      "elapsed": 14.9
+    },
+    {
+      "id": "dev_38",
+      "phenomenon": "directional_negation",
+      "domain": "biomedicine",
+      "claim": "Insulin promotes the release of free fatty acids from adipose tissue.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention 'antilipolytic effects' and 'suppressing free fatty acid efflux', but do not explicitly state that insulin promotes the release of free fatty acids from adipose tissue.",
+      "elapsed": 13.66
+    },
+    {
+      "id": "dev_39",
+      "phenomenon": "numerical_contradiction",
+      "domain": "genomics",
+      "claim": "The human genome encodes over 500,000 protein-coding genes.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes do not directly state the claim, and the provided number (19,000 to 20,000) is significantly lower than the claim (500,000).",
+      "elapsed": 15.53
+    },
+    {
+      "id": "dev_40",
+      "phenomenon": "direct_functional_negation",
+      "domain": "pharmacology",
+      "claim": "Proton pump inhibitors stimulate gastric acid secretion by parietal cells.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.15,
+      "is_correct": false,
+      "reasoning": "The quote does not mention parietal cells, which are a specific type of cell involved in gastric acid secretion.",
+      "elapsed": 13.17
+    },
+    {
+      "id": "dev_41",
+      "phenomenon": "universal_contradiction",
+      "domain": "cell_biology",
+      "claim": "Mitochondria lack their own genome and depend entirely on nuclear DNA.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote mentions 'mitochondria maintain an autonomous, circular double-stranded genome (mtDNA)', which implies the presence of a genome, but does not explicitly state that mitochondria lack their own genome.",
+      "elapsed": 14.42
+    },
+    {
+      "id": "dev_42",
+      "phenomenon": "direct_functional_negation",
+      "domain": "ai_ml",
+      "claim": "Residual connections make gradients vanish more rapidly during deep backpropagation.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote does not directly state that residual connections make gradients vanish more rapidly during deep backpropagation. It only mentions that residual skip connections provide an unimpeded gradient highway, which is tangential to the claim.",
+      "elapsed": 14.44
+    },
+    {
+      "id": "dev_43",
+      "phenomenon": "directional_negation",
+      "domain": "biomedicine",
+      "claim": "Glucagon acts to decrease blood glucose during fasting states.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quote mentions glucagon's action in response to hypoglycemia, but does not explicitly state its effect on blood glucose during fasting states.",
+      "elapsed": 13.92
+    },
+    {
+      "id": "dev_44",
+      "phenomenon": "direct_functional_negation",
+      "domain": "genomics",
+      "claim": "DNA polymerase synthesizes nascent DNA strands in the 3' to 5' direction.",
+      "expected": "rejected",
+      "predicted": "rejected",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quote states that DNA polymerases synthesize DNA in the 5' to 3' direction, which directly contradicts the claim.",
+      "elapsed": 13.39
+    },
+    {
+      "id": "dev_45",
+      "phenomenon": "numerical_contradiction",
+      "domain": "biomedicine",
+      "claim": "The antibody titer dropped to zero in all vaccinated animals within 24 hours.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.05,
+      "is_correct": false,
+      "reasoning": "The quotes do not mention the antibody titer dropping to zero within 24 hours; they only mention the neutralizing antibody titers remaining elevated through 6 months post-immunization.",
+      "elapsed": 14.48
+    },
+    {
+      "id": "dev_46",
+      "phenomenon": "direct_functional_negation",
+      "domain": "cell_biology",
+      "claim": "Cyclin-dependent kinases (CDKs) are constitutively active without binding cyclins.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes do not provide direct evidence for or against the claim; they describe the catalytic activity of monomeric CDKs and the requirement for conformational remodeling upon binding cyclins.",
+      "elapsed": 14.52
+    },
+    {
+      "id": "dev_47",
+      "phenomenon": "directional_negation",
+      "domain": "pharmacology",
+      "claim": "Beta-blockers increase heart rate and myocardial contractility.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes do not mention heart rate or myocardial contractility, only stating the inhibition of catecholamine binding and its effects on cardiac inotropy.",
+      "elapsed": 13.56
+    },
+    {
+      "id": "dev_48",
+      "phenomenon": "direct_functional_negation",
+      "domain": "genomics",
+      "claim": "RNA interference degrades target messenger RNAs exclusively in the mitochondrial matrix.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes do not mention the mitochondrial matrix; they only describe the eukaryotic cytoplasm, which is a different compartment.",
+      "elapsed": 13.03
+    },
+    {
+      "id": "dev_49",
+      "phenomenon": "numerical_contradiction",
+      "domain": "ai_ml",
+      "claim": "The vocabulary size of the tokenizer was restricted to only 50 distinct tokens.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The provided quote does not mention the vocabulary size of the tokenizer, only the BPE subword tokenizer's vocabulary size of 32,000 merge tokens.",
+      "elapsed": 17.37
+    },
+    {
+      "id": "dev_50",
+      "phenomenon": "direct_functional_negation",
+      "domain": "biomedicine",
+      "claim": "Loss of p53 function sensitizes tumor cells to spontaneous apoptosis.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention 'apoptosis resistance' and 'evade cell death', but do not explicitly state 'sensitizes tumor cells to spontaneous apoptosis'.",
+      "elapsed": 17.36
+    },
+    {
+      "id": "dev_51",
+      "phenomenon": "directional_negation",
+      "domain": "cell_biology",
+      "claim": "Active transport moves solutes down their thermodynamic concentration gradient without energy input.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes do not mention the thermodynamic concentration gradient or energy input, making it unclear if they support the claim.",
+      "elapsed": 15.32
+    },
+    {
+      "id": "dev_52",
+      "phenomenon": "universal_contradiction",
+      "domain": "genomics",
+      "claim": "Introns are fully retained in mature eukaryotic messenger RNAs.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes mention the removal of intronic sequences, but do not explicitly state that introns are fully retained in mature eukaryotic messenger RNAs.",
+      "elapsed": 14.35
+    },
+    {
+      "id": "dev_53",
+      "phenomenon": "numerical_contradiction",
+      "domain": "pharmacology",
+      "claim": "The drug's elimination half-life is greater than 30 days.",
+      "expected": "rejected",
+      "predicted": "rejected",
+      "confidence": 0.95,
+      "is_correct": true,
+      "reasoning": "The quote states an elimination half-life of 45 minutes, which is less than 30 days, directly contradicting the claim.",
+      "elapsed": 12.82
+    },
+    {
+      "id": "dev_54",
+      "phenomenon": "direct_functional_negation",
+      "domain": "biomedicine",
+      "claim": "Platelet aggregation is completely prevented by high concentrations of thrombin.",
+      "expected": "rejected",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": false,
+      "reasoning": "The quotes do not explicitly state that platelet aggregation is completely prevented by high concentrations of thrombin. Instead, they describe thrombin's role in driving platelet activation and fibrin clot stabilization.",
+      "elapsed": 15.01
+    },
+    {
+      "id": "dev_55",
+      "phenomenon": "scope_overreach",
+      "domain": "biomedicine",
+      "claim": "The gene therapy successfully reverses liver fibrosis in human clinical patients.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote does not mention humans, only a 'murine model', which is a type of mouse, and does not explicitly state the reversal of liver fibrosis in human patients.",
+      "elapsed": 13.74
+    },
+    {
+      "id": "dev_56",
+      "phenomenon": "causal_overreach",
+      "domain": "genomics",
+      "claim": "Elevated Cas9 expression directly causes increased chromosomal translocations.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote only mentions a positive correlation between Cas9 expression and chromosomal translocations, but does not explicitly state that elevated Cas9 expression causes increased chromosomal translocations.",
+      "elapsed": 13.8
+    },
+    {
+      "id": "dev_57",
+      "phenomenon": "speculative_hedging",
+      "domain": "genomics",
+      "claim": "The loop region determines the binding affinity for modified tracrRNA.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quotes do not explicitly state the claim; instead, they mention speculation about the flexible loop region's participation in governing binding affinity.",
+      "elapsed": 12.7
+    },
+    {
+      "id": "dev_58",
+      "phenomenon": "quantitative_overreach",
+      "domain": "cell_biology",
+      "claim": "The treatment increased cell viability by exactly 45 percent.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quotes mention an increase in cell viability, but the exact percentage (45 percent) is not explicitly stated.",
+      "elapsed": 12.0
+    },
+    {
+      "id": "dev_59",
+      "phenomenon": "partial_support",
+      "domain": "genomics",
+      "claim": "Cas9 requires ATP hydrolysis and operates optimally at physiological pH.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote mentions 'physiological pH 7.4', but does not explicitly state 'operates optimally at physiological pH' or 'requires ATP hydrolysis'.",
+      "elapsed": 13.68
+    },
+    {
+      "id": "dev_60",
+      "phenomenon": "irrelevant_evidence",
+      "domain": "genomics",
+      "claim": "Cas9 undergoes conformational change upon guide RNA loading.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.15,
+      "is_correct": true,
+      "reasoning": "The provided quotes do not mention Cas9 or guide RNA loading, making it impossible to determine the claim's validity based solely on the given text.",
+      "elapsed": 13.37
+    },
+    {
+      "id": "dev_61",
+      "phenomenon": "outside_knowledge_trap",
+      "domain": "genomics",
+      "claim": "The human genome contains approximately 3 billion base pairs.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.0,
+      "is_correct": true,
+      "reasoning": "The provided quotes do not mention the human genome or its base pairs, making it impossible to determine the claim's validity based solely on the given text.",
+      "elapsed": 13.45
+    },
+    {
+      "id": "dev_62",
+      "phenomenon": "missing_evidence",
+      "domain": "genomics",
+      "claim": "CRISPR interference selectively silences gene transcription without cutting DNA.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 1.0,
+      "is_correct": true,
+      "reasoning": "No supporting evidence was provided for this claim.",
+      "elapsed": 0.0
+    },
+    {
+      "id": "dev_63",
+      "phenomenon": "scope_overreach",
+      "domain": "pharmacology",
+      "claim": "Compound B-12 cures pancreatic adenocarcinoma in pediatric oncology patients.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote mentions cytotoxicity against PANC-1 cell lines, but does not specify the type of cancer or the effect on pediatric oncology patients.",
+      "elapsed": 15.4
+    },
+    {
+      "id": "dev_64",
+      "phenomenon": "causal_overreach",
+      "domain": "biomedicine",
+      "claim": "Dietary sodium restriction directly prevents myocardial infarction.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quotes mention an association between lower dietary sodium intake and reduced cardiovascular events, but do not explicitly state that dietary sodium restriction directly prevents myocardial infarction.",
+      "elapsed": 17.56
+    },
+    {
+      "id": "dev_65",
+      "phenomenon": "speculative_hedging",
+      "domain": "cell_biology",
+      "claim": "Phosphorylation at Ser473 activates the kinase for nuclear translocation.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quotes do not directly state that phosphorylation at Ser473 activates the kinase for nuclear translocation. Instead, they suggest a possible facilitation of nuclear translocation, but do not provide explicit evidence for the activation of the kinase.",
+      "elapsed": 14.79
+    },
+    {
+      "id": "dev_66",
+      "phenomenon": "quantitative_overreach",
+      "domain": "ai_ml",
+      "claim": "The quantized model operates with a latency reduction of exactly 70%.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quotes do not explicitly state the claim, only mention 'substantial latency improvements' without specifying the exact percentage.",
+      "elapsed": 12.22
+    },
+    {
+      "id": "dev_67",
+      "phenomenon": "partial_support",
+      "domain": "biomedicine",
+      "claim": "The therapy eradicates primary tumors and completely blocks metastatic dissemination.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quotes do not explicitly state the claim, only mention 'complete regression of primary xenograft tumor mass', which does not directly imply eradication of primary tumors or blocking of metastatic dissemination.",
+      "elapsed": 13.63
+    },
+    {
+      "id": "dev_68",
+      "phenomenon": "irrelevant_evidence",
+      "domain": "biomedicine",
+      "claim": "BRCA1 mutations predispose patients to early-onset breast cancer.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.0,
+      "is_correct": true,
+      "reasoning": "The quotes do not mention breast cancer or BRCA1 mutations, only locust swarms and precipitation shifts.",
+      "elapsed": 12.78
+    },
+    {
+      "id": "dev_69",
+      "phenomenon": "outside_knowledge_trap",
+      "domain": "biomedicine",
+      "claim": "Water freezes at zero degrees Celsius under atmospheric pressure.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.0,
+      "is_correct": true,
+      "reasoning": "The provided quote does not mention temperature or freezing point, only a scientific technique and its resolution.",
+      "elapsed": 12.11
+    },
+    {
+      "id": "dev_70",
+      "phenomenon": "missing_evidence",
+      "domain": "pharmacology",
+      "claim": "Liposomal encapsulation protects small interfering RNA from systemic nuclease degradation.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 1.0,
+      "is_correct": true,
+      "reasoning": "No supporting evidence was provided for this claim.",
+      "elapsed": 0.0
+    },
+    {
+      "id": "dev_71",
+      "phenomenon": "scope_overreach",
+      "domain": "genomics",
+      "claim": "The prime editor achieves 80% editing efficiency in all human tissues in vivo.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote only mentions '80% at the test locus' in HEK293T cells in vitro, without specifying 'all human tissues in vivo'.",
+      "elapsed": 13.39
+    },
+    {
+      "id": "dev_72",
+      "phenomenon": "causal_overreach",
+      "domain": "biomedicine",
+      "claim": "Poor sleep quality directly initiates amyloid beta plaque deposition.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote mentions 'correlated with higher CSF concentrations of amyloid beta peptides', but does not explicitly state that poor sleep quality 'directly initiates' amyloid beta plaque deposition.",
+      "elapsed": 14.03
+    },
+    {
+      "id": "dev_73",
+      "phenomenon": "speculative_hedging",
+      "domain": "pharmacology",
+      "claim": "The allosteric binding pocket confers absolute resistance to kinase inhibitors.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quotes do not explicitly state the claim, and the language used is suggestive rather than definitive. The phrase 'confer absolute resistance' is not present in the provided quotes.",
+      "elapsed": 13.93
+    },
+    {
+      "id": "dev_74",
+      "phenomenon": "quantitative_overreach",
+      "domain": "cell_biology",
+      "claim": "The longevity intervention doubles average organismal lifespan by exactly 100%.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote does not explicitly state the claim, only mentions a 'statistically significant prolongation of median survival', which does not directly support the claim of doubling lifespan by 100%.",
+      "elapsed": 13.4
+    },
+    {
+      "id": "dev_75",
+      "phenomenon": "partial_support",
+      "domain": "pharmacology",
+      "claim": "The vaccine confers sterile immunity against transmission and prevents mild symptomatic illness.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.0,
+      "is_correct": true,
+      "reasoning": "The quotes do not mention transmission, hospitalization, or mild symptomatic illness, which are crucial components of the claim.",
+      "elapsed": 12.65
+    },
+    {
+      "id": "dev_76",
+      "phenomenon": "irrelevant_evidence",
+      "domain": "ai_ml",
+      "claim": "Transformer attention heads exhibit sparsity across deeper layers.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The provided quotes do not mention transformer attention heads or sparsity, only a unrelated topic about geothermal fluids.",
+      "elapsed": 12.29
+    },
+    {
+      "id": "dev_77",
+      "phenomenon": "outside_knowledge_trap",
+      "domain": "pharmacology",
+      "claim": "Penicillin was discovered by Alexander Fleming in 1928.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.05,
+      "is_correct": true,
+      "reasoning": "The quote does not mention Alexander Fleming or the year 1928, making it insufficient to prove or disprove the claim.",
+      "elapsed": 13.15
+    },
+    {
+      "id": "dev_78",
+      "phenomenon": "missing_evidence",
+      "domain": "ai_ml",
+      "claim": "Direct preference optimization eliminates the need for an explicit reward model in RLHF.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 1.0,
+      "is_correct": true,
+      "reasoning": "No supporting evidence was provided for this claim.",
+      "elapsed": 0.0
+    },
+    {
+      "id": "dev_79",
+      "phenomenon": "scope_overreach",
+      "domain": "cell_biology",
+      "claim": "The anti-inflammatory cytokine prevents arthritis in geriatric patient populations.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote mentions 'reduced joint swelling and cartilage erosion', but does not explicitly state that the cytokine prevents arthritis in geriatric patient populations.",
+      "elapsed": 13.88
+    },
+    {
+      "id": "dev_80",
+      "phenomenon": "causal_overreach",
+      "domain": "biomedicine",
+      "claim": "Microbiome dysbiosis causes childhood asthma development.",
+      "expected": "uncertain",
+      "predicted": "uncertain",
+      "confidence": 0.45,
+      "is_correct": true,
+      "reasoning": "The quote mentions an association between altered gut bacterial composition and an elevated risk of asthma diagnosis, but it does not explicitly state that microbiome dysbiosis causes childhood asthma development.",
+      "elapsed": 13.27
+    }
+  ]
+}

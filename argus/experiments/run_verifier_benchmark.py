@@ -62,6 +62,12 @@ def run_benchmark(
     if limit:
         dataset = dataset[:limit]
 
+    # Enforce strict benchmark mode and disable caching by default to prevent contamination
+    if "STRICT_LLM" not in os.environ:
+        os.environ["STRICT_LLM"] = "true"
+    if "LLM_CACHE" not in os.environ:
+        os.environ["LLM_CACHE"] = "false"
+
     provider = os.getenv("LLM_PROVIDER", "ollama")
     model_name = model or os.getenv("DEFAULT_LLM_MODEL", "llama3.2:3b")
     safe_model = model_name.replace(":", "_").replace("/", "_")
@@ -138,14 +144,27 @@ def run_benchmark(
             "confidence": round(v_res.confidence, 2),
             "is_correct": is_correct,
             "reasoning": v_res.reasoning,
+            "provider": provider,
+            "model": model_name,
+            "prompt_version": prompt_version,
             "elapsed": round(elapsed, 2),
         }
         results_log.append(result_entry)
         completed_ids.add(case_id)
 
-        # Save checkpoint periodically
+        # Save checkpoint periodically with full experimental provenance
         with open(checkpoint_file, "w", encoding="utf-8") as cf:
-            json.dump({"results": results_log}, cf, indent=2)
+            json.dump({
+                "metadata": {
+                    "split": split,
+                    "provider": provider,
+                    "model": model_name,
+                    "prompt_version": prompt_version,
+                    "strict_mode": True,
+                    "cache_enabled": False,
+                },
+                "results": results_log,
+            }, cf, indent=2)
 
         icon = "[PASS]" if is_correct else "[FAIL]"
         print(f"[{len(results_log):02d}/{len(dataset):02d}] {icon} {case_id} ({phen}) "
@@ -219,8 +238,12 @@ def run_benchmark(
 
     report_payload = {
         "split": split,
-        "prompt_version": prompt_version,
+        "provider": provider,
         "model": model_name,
+        "prompt_version": prompt_version,
+        "temperature": 0.1,
+        "strict_mode": True,
+        "cache_enabled": False,
         "total_cases": len(results_log),
         "correct_count": correct_count,
         "accuracy": round(accuracy, 2),

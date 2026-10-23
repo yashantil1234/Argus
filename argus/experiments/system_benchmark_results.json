@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-23T16:52:36Z",
+  "concurrency_stress": {
+    "num_requests": 16,
+    "max_limit_configured": 4,
+    "peak_concurrency_observed": 4,
+    "limit_respected": true,
+    "total_elapsed_seconds": 0.25,
+    "throughput_req_per_sec": 64.0,
+    "effective_avg_latency_s": 0.0625
+  },
+  "failure_recovery": {
+    "initial_failover_latency_s": 0.016,
+    "cooldown_bypass_latency_s": 0.0,
+    "primary_in_cooldown": true,
+    "cooldown_remaining_s": 10.0,
+    "fallback_used_req1": true,
+    "fallback_used_req2": true
+  },
+  "multimodal_ingestion": {
+    "pdf_parse_time_ms": 78.0,
+    "pdf_pages_extracted": 2,
+    "html_parse_time_ms": 15.0,
+    "html_segments_extracted": 20,
+    "srt_parse_time_ms": 31.0,
+    "srt_segments_extracted": 2
+  }
+}

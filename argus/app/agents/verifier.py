@@ -159,7 +159,7 @@ class Verifier:
             len(evidence_items),
             self.model,
         )
-        raw = ask_llm(prompt, model=self.model)
+        raw = ask_llm(prompt, model=self.model, role="verifier")
         logger.debug("Verifier: raw response:\n%s", raw)
 
         payload = self._parse_and_validate(raw)
@@ -175,19 +175,46 @@ class Verifier:
     def verify_research_result(
         self,
         research_result: ResearchResult,
+        max_workers: int = 1,
     ) -> VerificationReport:
-        """Evaluate all claims in a ResearchResult artifact and produce a VerificationReport."""
-        evidence_map = {ev.id: ev for ev in research_result.evidence}
-        results: List[VerificationResult] = []
+        """Evaluate all claims in a ResearchResult artifact and produce a VerificationReport.
 
-        for claim in research_result.claims:
-            matched_evidence = [
-                evidence_map[eid]
-                for eid in claim.evidence_ids
-                if eid in evidence_map
-            ]
-            v_res = self.verify_claim(claim=claim, evidence_items=matched_evidence)
-            results.append(v_res)
+        Args:
+            research_result: The artifact containing claims and evidence.
+            max_workers: Max concurrent verification workers (default 1 for sequential).
+        """
+        evidence_map = {ev.id: ev for ev in research_result.evidence}
+        claims = research_result.claims
+
+        if max_workers > 1 and len(claims) > 1:
+            import concurrent.futures
+            ordered_results: list[Optional[VerificationResult]] = [None] * len(claims)
+
+            def _verify_idx(idx: int, cl: Claim) -> tuple[int, VerificationResult]:
+                matched_evidence = [
+                    evidence_map[eid]
+                    for eid in cl.evidence_ids
+                    if eid in evidence_map
+                ]
+                return idx, self.verify_claim(claim=cl, evidence_items=matched_evidence)
+
+            with concurrent.futures.ThreadPoolExecutor(max_workers=min(len(claims), max_workers)) as executor:
+                futures = [executor.submit(_verify_idx, i, c) for i, c in enumerate(claims)]
+                for fut in concurrent.futures.as_completed(futures):
+                    idx, v_res = fut.result()
+                    ordered_results[idx] = v_res
+
+            results = [r for r in ordered_results if r is not None]
+        else:
+            results = []
+            for claim in claims:
+                matched_evidence = [
+                    evidence_map[eid]
+                    for eid in claim.evidence_ids
+                    if eid in evidence_map
+                ]
+                v_res = self.verify_claim(claim=claim, evidence_items=matched_evidence)
+                results.append(v_res)
 
         report = VerificationReport(
             research_result_id=research_result.id,

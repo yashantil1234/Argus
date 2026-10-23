@@ -105,7 +105,7 @@ class ResearchPlanner:
         prompt = self._build_prompt(q_text, domain)
 
         logger.info("Planner: calling LLM for question=%r model=%s", q_text, self.model)
-        raw = ask_llm(prompt, model=self.model)
+        raw = ask_llm(prompt, model=self.model, role="planner")
         logger.debug("Planner: raw LLM response:\n%s", raw)
 
         return self._parse_response(raw, q_text, q_id)

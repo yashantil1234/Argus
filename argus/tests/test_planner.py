@@ -126,7 +126,7 @@ def test_research_question_id_is_propagated():
 def test_domain_is_included_in_prompt():
     captured_prompt = {}
 
-    def fake_llm(prompt: str, model=None) -> str:
+    def fake_llm(prompt: str, model=None, **kwargs) -> str:
         captured_prompt["text"] = prompt
         return _mock_llm(VALID_PAYLOAD)
 

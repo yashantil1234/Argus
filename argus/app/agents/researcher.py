@@ -146,7 +146,7 @@ class Researcher:
             "Researcher: extracting from source=%r plan_topic=%r model=%s",
             source.title, plan.topic, self.model,
         )
-        raw = ask_llm(prompt, model=self.model)
+        raw = ask_llm(prompt, model=self.model, role="researcher")
         logger.debug("Researcher: raw LLM response:\n%s", raw)
 
         payload = self._parse_and_validate(raw)

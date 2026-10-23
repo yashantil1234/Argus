@@ -20,6 +20,10 @@ class SourceType(str, Enum):
     WEB = "web"
     ACADEMIC = "academic"
     DOCUMENT = "document"
+    PDF = "pdf"
+    IMAGE = "image"
+    AUDIO = "audio"
+    VIDEO = "video"
     DATABASE = "database"
     USER = "user"
     OTHER = "other"
@@ -105,6 +109,8 @@ class Evidence(BaseModel):
     relevance: float = Field(default=1.0, ge=0.0, le=1.0)
     page: Optional[int] = None
     location: Optional[str] = None
+    start_time: Optional[float] = None                    # timestamp in seconds for audio/video
+    end_time: Optional[float] = None                      # timestamp in seconds for audio/video
     is_verbatim: bool = True                              # verified deterministically
     match_score: float = Field(default=1.0, ge=0.0, le=1.0)
 

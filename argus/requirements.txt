@@ -1,14 +1,19 @@
-# Core & Utilities
+# ── Core & Utilities ──────────────────────────────────────────────────────────
 python-dotenv>=1.0.0
 pydantic>=2.6.0
 pydantic-settings>=2.2.0
 
-# API & Web Framework
+# ── API & Web Framework ───────────────────────────────────────────────────────
 fastapi>=0.110.0
 uvicorn[standard]>=0.28.0
 httpx>=0.27.0
 requests>=2.31.0
 
-# Testing
+# ── LLM Providers ─────────────────────────────────────────────────────────────
+# OpenAI SDK — unified client for Groq, Gemini (OpenAI-compatible endpoint), OpenRouter, and xAI
+openai>=1.30.0
+
+
+# ── Testing ───────────────────────────────────────────────────────────────────
 pytest>=8.0.0
 pytest-asyncio>=0.23.0
